@@ -21,10 +21,7 @@ namespace API.DemoDapper.Controllers
         [HttpGet()]
         public IActionResult Get(int page=1, int size=10)
         {
-            List<dynamic> clients = new List<dynamic>();
-            clients.Add(new { nome = "Joao", cpf = "123456458911" });
-            clients.Add(new { nome = "Maria", cpf = "98765432125" });
-            return Ok(clients);
+            return Ok(_clientService.Get(page,size));
         }
 
         [HttpGet("{id}")]

@@ -26,6 +26,7 @@ namespace API.DemoDapper.Repositories
         public void Delete(Client client)
         {
             _context.Cliente.Remove(client);
+            _context.SaveChanges();
         }
 
         public List<Client> Get(int page = 1, int size = 10)
@@ -49,12 +50,14 @@ namespace API.DemoDapper.Repositories
         public int Insert(Client client)
         {
             _context.Cliente.Add(client);
+            _context.SaveChanges();
             return client.Id;
         }
 
         public void Update(Client client)
         {
             _context.Set<Client>().Update(client);
+            _context.SaveChanges();
         }
     }
 }

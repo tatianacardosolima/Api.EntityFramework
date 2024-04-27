@@ -22,6 +22,7 @@ namespace API.DemoDapper.Repositories
         public void Delete(PurchaseOrderItem purchaseOrderItem)
         {
             _context.PurchaseOrderItem.Remove(purchaseOrderItem);
+            _context.SaveChanges();
         }
 
         public List<PurchaseOrderItem> Get(int page = 1, int size = 10)
@@ -41,12 +42,14 @@ namespace API.DemoDapper.Repositories
         public int Insert(PurchaseOrderItem purchaseOrderItem)
         {
             _context.PurchaseOrderItem.Add(purchaseOrderItem);
+            _context.SaveChanges();
             return purchaseOrderItem.Id;
         }
 
         public void Update(PurchaseOrderItem purchaseOrderItem)
         {
             _context.Set<PurchaseOrderItem>().Update(purchaseOrderItem);
+            _context.SaveChanges();
         }
     }
 }

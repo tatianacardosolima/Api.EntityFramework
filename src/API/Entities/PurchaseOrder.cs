@@ -13,7 +13,7 @@
         {        
         }
         
-        public Client Client{ get; set; }
+        public Client? Client{ get; set; }
         public int ClientId { get; set; }
         public DateTime DateIssue { get; set; }
         public PurchaseOrderStatus Status { get; set; }
