@@ -19,8 +19,8 @@ namespace API.EntityFramework.Mappings
                 .ValueGeneratedOnAdd().IsRequired()
                 .HasColumnType("int");
 
-            //builder.Property(x => x.PhoneNumber).IsRequired(true).HasMaxLength(20).HasColumnType("varchar(20)");
-            //builder.Property(x => x.Email).IsRequired(true).HasMaxLength(45).HasColumnType("varchar(45)");
+            builder.Property(x => x.Document).IsRequired(true).HasMaxLength(14).HasColumnType("varchar(14)");
+            builder.Property(x => x.DocumentDate);
         }
     }
 }

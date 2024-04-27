@@ -24,7 +24,8 @@ namespace API.EntityFramework.Entities
         }
      
         public string Name { get; set; }
-        
+        public string Document { get; set; }
+        public DateTime? DocumentDate { get; set; }
 
         //public AddressObjectValue Address { get; set; }
         //public DocumentObjectValue Document { get; set; }

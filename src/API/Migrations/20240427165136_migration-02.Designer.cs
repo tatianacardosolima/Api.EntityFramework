@@ -4,6 +4,7 @@ using API.EntityFramework.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.EntityFramework.Migrations
 {
     [DbContext(typeof(ExampleDBContext))]
-    partial class ExampleDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240427165136_migration-02")]
+    partial class migration02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +44,6 @@ namespace API.EntityFramework.Migrations
                         .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
-
-                    b.Property<DateTime?>("DocumentDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
